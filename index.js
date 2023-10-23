@@ -12,8 +12,8 @@ app.post('/submit', (req, res) => {
 });
 
 app.post('/emailSubmit', (req, res) => {
-  let emailAd = req.body.emailAddress;
-  res.send(`Server recieved: Email Address - ${emailAd}`)
+  let emailAddress = req.body.emailAddress;
+  res.send(`Server recieved: Email Address - ${emailAddress}`)
 });
 
 app.get('/test', (req, res) => {
