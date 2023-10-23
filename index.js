@@ -6,16 +6,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/submit', (req, res) => {
-  let username = req.body.username;
-  let password = req.body.password;
-  res.send(`Server received: Username - ${username}, Password - ${password}`);
+  let firstName = req.body.firstName;
+  let lastName = req.body.lastName;
+  res.send(`Server received: First Name - ${firstName}, Last Name - ${lastName}`);
 });
 
-app.post('/calculate', (req, res) => {
-  let firstNumber = Number(req.body.firstNumber);
-  let secondNumber = Number(req.body.secondNumber);
-  let result = firstNumber + secondNumber;
-  res.send(`Result is - ${result}`);
+app.post('/emailSubmit', (req, res) => {
+  let emailAd = req.body.emailAddress;
+  res.send(`Server recieved: Email Address - ${emailAd}`)
 });
 
 app.get('/test', (req, res) => {
